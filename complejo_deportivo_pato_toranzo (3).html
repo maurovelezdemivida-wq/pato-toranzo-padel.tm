@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complejo Deportivo Pato Toranzo</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#f0fdf4',
+                            100: '#dcfce7',
+                            500: '#22c55e',
+                            600: '#16a34a',
+                            700: '#15803d',
+                            900: '#14532d',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Poppins', sans-serif; }
+        .hero-pattern {
+            background-color: #111827;
+            background-image: radial-gradient(#22c55e 0.75px, transparent 0.75px), radial-gradient(#111827 0.75px, #111827 0.75px);
+            background-size: 30px 30px;
+            background-position: 0 0, 15px 15px;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 antialiased selection:bg-brand-500 selection:text-white">
+
+    <nav class="sticky top-0 z-50 bg-gray-900/95 backdrop-blur border-b border-gray-800 text-white shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <div class="bg-brand-500 text-white p-2.5 rounded-xl shadow-md flex items-center justify-center font-black text-xl">
+                    <i class="fa-solid fa-futbol"></i>
+                </div>
+                <div>
+                    <span class="text-xl font-bold tracking-tight block leading-tight">Pato Toranzo</span>
+                    <span class="text-xs text-brand-400 font-medium tracking-wider uppercase">Complejo Deportivo</span>
+                </div>
+            </div>
+            
+            <div class="hidden md:flex items-center space-x-8 text-sm font-medium">
+                <a href="#inicio" class="hover:text-brand-400 transition">Inicio</a>
+                <a href="#galeria" class="hover:text-brand-400 transition">Galería</a>
+                <a href="#clases" class="hover:text-brand-400 transition">Clases de Padel</a>
+                <a href="#eventos" class="hover:text-brand-400 transition">Próximos Eventos</a>
+                <a href="#contacto" class="hover:text-brand-400 transition">Contacto</a>
+            </div>
+
+            <div class="flex items-center space-x-3">
+                <a href="https://wa.me/541128997393?text=Hola!%20Quiero%20consultar%20por%20turnos%20o%20clases%20en%20el%20Complejo%20Pato%20Toranzo" target="_blank" class="bg-emerald-600 hover:bg-emerald-500 text-white px-4 py-2.5 rounded-xl text-sm font-semibold shadow-lg shadow-emerald-600/30 transition flex items-center space-x-2">
+                    <i class="fa-brands fa-whatsapp text-lg"></i>
+                    <span class="hidden sm:inline">WhatsApp</span>
+                </a>
+                <button onclick="openAdmin()" class="bg-gray-800 hover:bg-gray-700 text-gray-300 hover:text-white px-3 py-2.5 rounded-xl text-sm border border-gray-700 transition" title="Panel de Administración">
+                    <i class="fa-solid fa-lock text-xs"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <header id="inicio" class="hero-pattern text-white py-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-r from-gray-950 via-gray-900/90 to-transparent"></div>
+        <div class="max-w-7xl mx-auto relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div class="space-y-6">
+                <div class="inline-flex items-center space-x-2 bg-brand-500/20 text-brand-400 px-3.5 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider border border-brand-500/30">
+                    <i class="fa-solid fa-fire text-brand-400"></i>
+                    <span>El mejor complejo de la zona</span>
+                </div>
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight">
+                    Complejo Deportivo <span class="text-brand-400">Pato Toranzo</span>
+                </h1>
+                <p class="text-gray-300 text-lg max-w-xl font-light">
+                    Disfruta de nuestras canchas de padel, torneos apasionantes, clases personalizadas y un ambiente único para deportistas.
+                </p>
+                <div class="flex flex-wrap gap-4 pt-4">
+                    <a href="https://wa.me/541128997393?text=Hola!%20Quiero%20reservar%20una%20cancha%20en%20Pato%20Toranzo" target="_blank" class="bg-brand-500 hover:bg-brand-600 text-white font-semibold px-6 py-3.5 rounded-xl shadow-lg shadow-brand-500/30 transition flex items-center space-x-2">
+                        <i class="fa-solid fa-calendar-check"></i>
+                        <span>Reservar Cancha</span>
+                    </a>
+                    <a href="#clases" class="bg-gray-800/80 hover:bg-gray-700 text-white font-semibold px-6 py-3.5 rounded-xl border border-gray-700 backdrop-blur transition flex items-center space-x-2">
+                        <i class="fa-solid fa-graduation-cap text-brand-400"></i>
+                        <span>Ver Clases</span>
+                    </a>
+                </div>
+                <div class="grid grid-cols-3 gap-6 pt-6 border-t border-gray-800 text-gray-300">
+                    <div>
+                        <div class="text-2xl font-bold text-white">Canchas</div>
+                        <div class="text-xs text-gray-400">De Padel</div>
+                    </div>
+                    <div>
+                        <div class="text-2xl font-bold text-white">Lun a Sáb</div>
+                        <div class="text-xs text-gray-400">10:00 a 17:00 hs</div>
+                    </div>
+                    <div>
+                        <div class="flex items-center space-x-1.5 text-brand-400 pt-1">
+                            <i class="fa-brands fa-whatsapp text-lg"></i>
+                            <span class="text-sm font-semibold">11 2899-7393</span>
+                        </div>
+                        <div class="text-xs text-gray-400">WhatsApp</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="relative">
+                <div class="bg-gradient-to-tr from-brand-500 to-emerald-400 rounded-3xl p-1 shadow-2xl">
+                    <div class="bg-gray-900 rounded-[22px] overflow-hidden relative aspect-[4/3]">
+                        <img id="hero-preview-img" src="https://images.unsplash.com/photo-1554068865-24cecd4e34b8?auto=format&fit=crop&w=800&q=80" alt="Complejo Pato Toranzo" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex items-end p-6">
+                            <div>
+                                <span class="bg-brand-500 text-white text-xs font-bold px-2.5 py-1 rounded-md uppercase tracking-wider">Destacado</span>
+                                <h3 id="hero-preview-title" class="text-xl font-bold text-white mt-2">Canchas de Padel</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section id="galeria" class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+            <span class="text-brand-600 font-semibold text-sm uppercase tracking-wider bg-brand-50 px-3 py-1 rounded-full border border-brand-100">Galería del Complejo</span>
+            <h2 class="text-3xl sm:text-4xl font-extrabold text-gray-900 mt-3">Explorá nuestras instalaciones</h2>
+            <p class="text-gray-600 mt-2">Navegá entre las fotos del complejo utilizando los botones laterales o deslizando.</p>
+        </div>
+
+        <div class="relative max-w-4xl mx-auto bg-white rounded-3xl shadow-xl overflow-hidden border border-gray-100">
+            <div class="relative h-[350px] sm:h-[480px] bg-gray-900 overflow-hidden flex items-center justify-center">
+                <img id="carousel-img" src="" alt="Foto galería" class="w-full h-full object-cover transition-all duration-500">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                <div class="absolute bottom-6 left-6 right-6 text-white">
+                    <span id="carousel-badge" class="bg-brand-500 text-white text-xs font-bold px-3 py-1 rounded-full">Instalaciones</span>
+                    <h3 id="carousel-caption" class="text-xl sm:text-2xl font-bold mt-2">Canchas de Padel Pato Toranzo</h3>
+                </div>
+
+                <button onclick="prevPhoto()" class="absolute left-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/75 text-white w-12 h-12 rounded-full flex items-center justify-center backdrop-blur transition shadow-lg">
+                    <i class="fa-solid fa-chevron-left"></i>
+                </button>
+                <button onclick="nextPhoto()" class="absolute right-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/75 text-white w-12 h-12 rounded-full flex items-center justify-center backdrop-blur transition shadow-lg">
+                    <i class="fa-solid fa-chevron-right"></i>
+                </button>
+            </div>
+            
+            <div id="carousel-indicators" class="p-4 bg-gray-50 flex items-center justify-center space-x-2 overflow-x-auto">
+                <!-- Dynamic thumbnails populated via JS -->
+            </div>
+        </div>
+    </section>
+
+    <section id="clases" class="py-20 bg-gray-900 text-white relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#22c55e_1px,transparent_1px)] [background-size:16px_16px]"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <span class="text-brand-400 font-semibold text-sm uppercase tracking-wider bg-brand-500/10 px-3 py-1 rounded-full border border-brand-500/20">Escuela de Padel</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold mt-3">Clases de Padel Iniciales</h2>
+                    <p class="text-gray-300 mt-4 leading-relaxed">
+                        ¿Querés aprender a jugar al padel o mejorar tu nivel técnico y táctico? Anotate en nuestras clases iniciales dictadas en el complejo.
+                    </p>
+                    
+                    <div class="space-y-4 my-8">
+                        <div class="flex items-start space-x-4 bg-gray-800/80 p-4 rounded-2xl border border-gray-700">
+                            <div class="bg-brand-500/20 text-brand-400 p-3 rounded-xl">
+                                <i class="fa-solid fa-clock text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg">Días y Horarios</h4>
+                                <p class="text-brand-400 font-semibold text-sm">Lunes a Sábados de 10:00 hs a 17:00 hs</p>
+                                <p class="text-xs text-gray-400 mt-1">Clases iniciales grupales o individuales.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-4 bg-gray-800/80 p-4 rounded-2xl border border-gray-700">
+                            <div class="bg-emerald-500/20 text-emerald-400 p-3 rounded-xl">
+                                <i class="fa-brands fa-whatsapp text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg">Inscripciones y Consultas</h4>
+                                <p class="text-emerald-400 font-semibold text-sm">WhatsApp: 11 2899-7393</p>
+                                <p class="text-xs text-gray-400 mt-1">Escribinos directamente para consultar vacantes.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-wrap gap-4">
+                        <a href="https://wa.me/541128997393?text=Hola!%20Quiero%20inscribirme%20a%20las%20clases%20de%20padel%20iniciales" target="_blank" class="bg-emerald-600 hover:bg-emerald-500 text-white font-bold px-6 py-3.5 rounded-xl shadow-lg shadow-emerald-600/30 transition flex items-center space-x-2">
+                            <i class="fa-brands fa-whatsapp text-xl"></i>
+                            <span>Inscribirme por WhatsApp</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="bg-gray-800 rounded-3xl p-8 border border-gray-700 shadow-2xl flex flex-col items-center text-center">
+                    <div class="bg-brand-500 text-white w-12 h-12 rounded-2xl flex items-center justify-center font-bold text-xl mb-4 shadow-lg">
+                        <i class="fa-solid fa-qrcode"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-1">Escaneá para WhatsApp</h3>
+                    <p class="text-xs text-gray-400 mb-6">Apunta tu cámara al código QR para chatear al instante</p>
+                    
+                    <div class="bg-white p-4 rounded-2xl shadow-inner inline-block mb-4">
+                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=https%3A%2F%2Fwa.me%2F541128997393%3Ftext%3DHola!%20Quiero%20consultar%20por%20turnos%20o%20clases" alt="QR WhatsApp Pato Toranzo" class="w-40 h-40 object-contain">
+                    </div>
+                    <span class="text-xs text-emerald-400 font-medium bg-emerald-500/10 px-3 py-1.5 rounded-full border border-emerald-500/20">
+                        <i class="fa-brands fa-whatsapp mr-1"></i> 11 2899-7393
+                    </span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="eventos" class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+            <div>
+                <span class="text-brand-600 font-semibold text-sm uppercase tracking-wider bg-brand-50 px-3 py-1 rounded-full border border-brand-100">Torneos y Novedades</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-gray-900 mt-3">Próximos Eventos</h2>
+                <p class="text-gray-600 mt-2">Enterate de los campeonatos, clínicas especiales y eventos del complejo.</p>
+            </div>
+            <div class="mt-4 md:mt-0">
+                <span class="text-sm text-gray-500 italic"><i class="fa-solid fa-circle-info mr-1 text-brand-500"></i> Actualizado por la administración</span>
+            </div>
+        </div>
+
+        <div id="events-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Dynamic events populated via JS -->
+        </div>
+    </section>
+
+    <footer id="contacto" class="bg-gray-950 text-white pt-16 pb-12 border-t border-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
+            <div class="space-y-4">
+                <div class="flex items-center space-x-3">
+                    <div class="bg-brand-500 text-white p-2.5 rounded-xl font-black text-lg">
+                        <i class="fa-solid fa-futbol"></i>
+                    </div>
+                    <span class="text-xl font-bold">Pato Toranzo</span>
+                </div>
+                <p class="text-gray-400 text-sm leading-relaxed">
+                    Tu punto de encuentro deportivo. Canchas de padel, torneos y clases.
+                </p>
+            </div>
+
+            <div class="space-y-4">
+                <h4 class="text-lg font-semibold text-white">Horarios del Complejo</h4>
+                <ul class="space-y-2 text-sm text-gray-400">
+                    <li class="flex justify-between border-b border-gray-900 pb-2">
+                        <span>Lunes a Sábados:</span>
+                        <span class="text-white font-medium">10:00 - 17:00 hs (Clases)</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="space-y-4 flex flex-col items-start">
+                <h4 class="text-lg font-semibold text-white">Código QR</h4>
+                <div class="bg-white p-2 rounded-xl shadow-md inline-block">
+                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=90x90&data=https%3A%2F%2Fwa.me%2F541128997393%3Ftext%3DHola!%20Quiero%20consultar%20por%20turnos%20o%20clases" alt="QR Footer" class="w-20 h-20 object-contain">
+                </div>
+                <div class="pt-2">
+                    <button onclick="openAdmin()" class="text-xs text-gray-500 hover:text-gray-300 underline">
+                        Panel de Administración
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 border-t border-gray-900 text-center text-xs text-gray-500">
+            &copy; 2026 Complejo Deportivo Pato Toranzo. Todos los derechos reservados.
+        </div>
+    </footer>
+
+    <!-- Login Modal -->
+    <div id="login-modal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-3xl max-w-md w-full shadow-2xl p-6 sm:p-8 relative">
+            <button onclick="closeLoginModal()" class="absolute top-6 right-6 text-gray-400 hover:text-gray-700 w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center transition">
+                <i class="fa-solid fa-xmark text-lg"></i>
+            </button>
+            <div class="text-center mb-6">
+                <div class="bg-brand-500 text-white w-12 h-12 rounded-2xl mx-auto flex items-center justify-center text-xl mb-3 shadow-lg">
+                    <i class="fa-solid fa-lock"></i>
+                </div>
+                <h3 class="text-2xl font-bold text-gray-900">Acceso Exclusivo</h3>
+                <p class="text-xs text-gray-500">Ingrese sus credenciales de administración</p>
+            </div>
+            <div class="space-y-4">
+                <div>
+                    <label class="block text-xs font-semibold text-gray-600 mb-1">Usuario</label>
+                    <input type="text" id="login-user" class="w-full px-4 py-2.5 rounded-xl border border-gray-300 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500">
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold text-gray-600 mb-1">Contraseña</label>
+                    <input type="password" id="login-pass" class="w-full px-4 py-2.5 rounded-xl border border-gray-300 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500">
+                </div>
+                <button onclick="handleLogin()" class="w-full bg-brand-500 hover:bg-brand-600 text-white font-semibold py-3 rounded-xl text-sm shadow-md transition">
+                    Ingresar al Panel
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Admin Panel Modal -->
+    <div id="admin-modal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-3xl max-w-2xl w-full max-h-[90vh] overflow-y-auto shadow-2xl p-6 sm:p-8 relative">
+            <button onclick="toggleAdminModal()" class="absolute top-6 right-6 text-gray-400 hover:text-gray-700 w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center transition">
+                <i class="fa-solid fa-xmark text-lg"></i>
+            </button>
+            
+            <div class="flex items-center space-x-3 mb-6">
+                <div class="bg-brand-500 text-white p-3 rounded-2xl">
+                    <i class="fa-solid fa-gear text-xl"></i>
+                </div>
+                <div>
+                    <h3 class="text-2xl font-bold text-gray-900">Panel de Administración</h3>
+                    <p class="text-xs text-gray-500">Configurá las fotos y eventos de Pato Toranzo</p>
+                </div>
+            </div>
+
+            <!-- Admin Tabs -->
+            <div class="flex border-b border-gray-200 mb-6">
+                <button onclick="switchTab('photos')" id="tab-photos-btn" class="pb-3 px-4 font-semibold text-sm border-b-2 border-brand-500 text-brand-600 transition">Gestionar Fotos</button>
+                <button onclick="switchTab('events')" id="tab-events-btn" class="pb-3 px-4 font-semibold text-sm border-b-2 border-transparent text-gray-500 hover:text-gray-700 transition">Gestionar Eventos</button>
+            </div>
+
+            <!-- Photos Management Tab -->
+            <div id="tab-photos-content" class="space-y-6">
+                <div class="bg-gray-50 p-4 rounded-2xl border border-gray-200 space-y-4">
+                    <h4 class="font-bold text-gray-800 text-sm">Subir Nueva Foto desde tu Ordenador</h4>
+                    <div class="space-y-3">
+                        <div>
+                            <label class="block text-xs font-semibold text-gray-600 mb-1">Seleccionar Archivo de Imagen</label>
+                            <input type="file" id="new-photo-file" accept="image/*" class="w-full px-4 py-2 rounded-xl border border-gray-300 text-sm bg-white file:mr-4 file:py-2 file:px-4 file:rounded-xl file:border-0 file:text-xs file:font-semibold file:bg-brand-50 file:text-brand-700 hover:file:bg-brand-100">
+                        </div>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                            <div>
+                                <label class="block text-xs font-semibold text-gray-600 mb-1">Título de la Foto</label>
+                                <input type="text" id="new-photo-caption" placeholder="Cancha principal" class="w-full px-4 py-2.5 rounded-xl border border-gray-300 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-semibold text-gray-600 mb-1">Etiqueta (Badge)</label>
+                                <input type="text" id="new-photo-badge" placeholder="Padel / Instalaciones" class="w-full px-4 py-2.5 rounded-xl border border-gray-300 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500">
+                            </div>
+                        </div>
+                        <button onclick="addPhoto()" class="w-full bg-brand-500 hover:bg-brand-600 text-white font-semibold py-2.5 rounded-xl text-sm shadow-md transition">
+                            <i class="fa-solid fa-upload mr-1"></i> Subir y Agregar a la Galería
+                        </button>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-gray-800 text-sm mb-3">Fotos Actuales en la Galería</h4>
+                    <div id="admin-photos-list" class="space-y-2 max-h-60 overflow-y-auto pr-1">
+                        <!-- Populated via JS -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Events Management Tab -->
+            <div id="tab-events-content" class="space-y-6 hidden">
+                <div class="bg-gray-50 p-4 rounded-2xl border border-gray-200 space-y-4">
+                    <h4 class="font-bold text-gray-800 text-sm">Publicar Nuevo Evento o Torneo</h4>
+                    <div class="space-y-3">
+                        <div>
+                            <label class="block text-xs font-semibold text-gray-600 mb-1">Título del Evento</label>
+                            <input type="text" id="new-event-title" placeholder="Torneo Relámpago" class="w-full px-4 py-2.5 rounded-xl border border-gray-300 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500">
+                        </div>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                            <div>
+                                <label class="block text-xs font-semibold text-gray-600 mb-1">Fecha / Horario</label>
+                                <input type="text" id="new-event-date" placeholder="Sábado 15 Hs" class="w-full px-4 py-2.5 rounded-xl border border-gray-300 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-semibold text-gray-600 mb-1">Imagen del Evento (desde Ordenador)</label>
+                                <input type="file" id="new-event-file" accept="image/*" class="w-full px-4 py-2 rounded-xl border border-gray-300 text-sm bg-white file:mr-2 file:py-1.5 file:px-3 file:rounded-xl file:border-0 file:text-xs file:font-semibold file:bg-brand-50 file:text-brand-700 hover:file:bg-brand-100">
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold text-gray-600 mb-1">Descripción Breve</label>
+                            <textarea id="new-event-desc" rows="2" placeholder="Inscripción abierta..." class="w-full px-4 py-2.5 rounded-xl border border-gray-300 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500"></textarea>
+                        </div>
+                        <button onclick="addEvent()" class="w-full bg-brand-500 hover:bg-brand-600 text-white font-semibold py-2.5 rounded-xl text-sm shadow-md transition">
+                            <i class="fa-solid fa-calendar-plus mr-1"></i> Publicar Evento
+                        </button>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-gray-800 text-sm mb-3">Eventos Publicados</h4>
+                    <div id="admin-events-list" class="space-y-2 max-h-60 overflow-y-auto pr-1">
+                        <!-- Populated via JS -->
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-6 pt-4 border-t border-gray-100 flex justify-end">
+                <button onclick="toggleAdminModal()" class="bg-gray-200 hover:bg-gray-300 text-gray-800 font-semibold px-5 py-2.5 rounded-xl text-sm transition">
+                    Cerrar Panel
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Custom Notification Toast -->
+    <div id="toast" class="fixed bottom-6 right-6 z-50 transform translate-y-20 opacity-0 transition-all duration-300 bg-gray-900 text-white px-5 py-3 rounded-2xl shadow-2xl flex items-center space-x-3 border border-gray-800">
+        <div id="toast-icon" class="text-brand-400 text-lg"><i class="fa-solid fa-circle-check"></i></div>
+        <div id="toast-msg" class="text-sm font-medium">Acción realizada con éxito</div>
+    </div>
+
+    <script>
+        const defaultPhotos = [
+            {
+                url: "https://images.unsplash.com/photo-1554068865-24cecd4e34b8?auto=format&fit=crop&w=1200&q=80",
+                caption: "Canchas de Padel",
+                badge: "Padel"
+            },
+            {
+                url: "https://images.unsplash.com/photo-1576267423445-b2e0074d68a4?auto=format&fit=crop&w=1200&q=80",
+                caption: "Iluminación Nocturna",
+                badge: "Instalaciones"
+            },
+            {
+                url: "https://images.unsplash.com/photo-1622279457486-62dcc4a431d6?auto=format&fit=crop&w=1200&q=80",
+                caption: "Zona de Descanso",
+                badge: "Comodidades"
+            }
+        ];
+
+        const defaultEvents = [
+            {
+                title: "Torneo Relámpago Categoría 5ta y 6ta",
+                date: "Sábado próximo - 14:00 Hs",
+                img: "https://images.unsplash.com/photo-1554068865-24cecd4e34b8?auto=format&fit=crop&w=600&q=80",
+                desc: "¡Inscribite con tu pareja! Premios para campeones y subcampeones."
+            },
+            {
+                title: "Clases de Padel Iniciales",
+                date: "Lunes a Sábados (10 a 17 hs)",
+                img: "https://images.unsplash.com/photo-1576267423445-b2e0074d68a4?auto=format&fit=crop&w=600&q=80",
+                desc: "Clases orientadas a quienes recién empiezan. Aprendé golpes básicos y posicionamiento."
+            }
+        ];
+
+        let photos = JSON.parse(localStorage.getItem('pato_toranzo_photos')) || defaultPhotos;
+        let events = JSON.parse(localStorage.getItem('pato_toranzo_events')) || defaultEvents;
+        let currentPhotoIndex = 0;
+        let isAdminLoggedIn = false;
+
+        window.onload = function() {
+            updateCarousel();
+            renderIndicators();
+            renderEvents();
+            renderAdminLists();
+        };
+
+        function openAdmin() {
+            if (isAdminLoggedIn) {
+                toggleAdminModal();
+            } else {
+                document.getElementById('login-modal').classList.remove('hidden');
+            }
+        }
+
+        function closeLoginModal() {
+            document.getElementById('login-modal').classList.add('hidden');
+        }
+
+        function handleLogin() {
+            const user = document.getElementById('login-user').value.trim();
+            const pass = document.getElementById('login-pass').value.trim();
+
+            if (user === 'pato toranzo' && pass === '12345') {
+                isAdminLoggedIn = true;
+                closeLoginModal();
+                document.getElementById('login-user').value = '';
+                document.getElementById('login-pass').value = '';
+                toggleAdminModal();
+                showToast("Bienvenido, Pato Toranzo");
+            } else {
+                showToast("Usuario o contraseña incorrectos", "error");
+            }
+        }
+
+        function updateCarousel() {
+            if (photos.length === 0) return;
+            const photo = photos[currentPhotoIndex];
+            const imgEl = document.getElementById('carousel-img');
+            const captionEl = document.getElementById('carousel-caption');
+            const badgeEl = document.getElementById('carousel-badge');
+            
+            imgEl.style.opacity = '0.4';
+            setTimeout(() => {
+                imgEl.src = photo.url;
+                captionEl.textContent = photo.caption;
+                badgeEl.textContent = photo.badge || 'Padel';
+                imgEl.style.opacity = '1';
+            }, 150);
+
+            if(currentPhotoIndex === 0) {
+                document.getElementById('hero-preview-img').src = photo.url;
+                document.getElementById('hero-preview-title').textContent = photo.caption;
+            }
+
+            updateIndicatorsActiveState();
+        }
+
+        function nextPhoto() {
+            currentPhotoIndex = (currentPhotoIndex + 1) % photos.length;
+            updateCarousel();
+        }
+
+        function prevPhoto() {
+            currentPhotoIndex = (currentPhotoIndex - 1 + photos.length) % photos.length;
+            updateCarousel();
+        }
+
+        function setPhotoIndex(index) {
+            currentPhotoIndex = index;
+            updateCarousel();
+        }
+
+        function renderIndicators() {
+            const container = document.getElementById('carousel-indicators');
+            container.innerHTML = '';
+            photos.forEach((photo, idx) => {
+                const btn = document.createElement('button');
+                btn.className = `w-16 h-12 rounded-lg overflow-hidden border-2 transition-all flex-shrink-0 ${idx === currentPhotoIndex ? 'border-brand-500 scale-105 shadow-md' : 'border-transparent opacity-60 hover:opacity-100'}`;
+                btn.innerHTML = `<img src="${photo.url}" class="w-full h-full object-cover">`;
+                btn.onclick = () => setPhotoIndex(idx);
+                container.appendChild(btn);
+            });
+        }
+
+        function updateIndicatorsActiveState() {
+            const container = document.getElementById('carousel-indicators');
+            Array.from(container.children).forEach((btn, idx) => {
+                if (idx === currentPhotoIndex) {
+                    btn.className = "w-16 h-12 rounded-lg overflow-hidden border-2 border-brand-500 scale-105 shadow-md flex-shrink-0 transition-all";
+                } else {
+                    btn.className = "w-16 h-12 rounded-lg overflow-hidden border-2 border-transparent opacity-60 hover:opacity-100 flex-shrink-0 transition-all";
+                }
+            });
+        }
+
+        function renderEvents() {
+            const grid = document.getElementById('events-grid');
+            grid.innerHTML = '';
+            events.forEach((ev, idx) => {
+                const card = document.createElement('div');
+                card.className = "bg-white rounded-3xl overflow-hidden shadow-lg border border-gray-100 flex flex-col justify-between hover:shadow-xl transition";
+                card.innerHTML = `
+                    <div>
+                        <div class="h-48 overflow-hidden relative">
+                            <img src="${ev.img}" alt="${ev.title}" class="w-full h-full object-cover hover:scale-105 transition duration-500">
+                            <div class="absolute top-4 right-4 bg-brand-500 text-white font-semibold text-xs px-3 py-1.5 rounded-full shadow-md">
+                                ${ev.date}
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-gray-900 mb-2">${ev.title}</h3>
+                            <p class="text-gray-600 text-sm leading-relaxed">${ev.desc}</p>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0">
+                        <a href="https://wa.me/541128997393?text=Hola!%20Quiero%20consultar%20sobre%20el%20evento:%20${encodeURIComponent(ev.title)}" target="_blank" class="w-full bg-emerald-600 hover:bg-emerald-500 text-white font-semibold py-3 rounded-xl text-sm flex items-center justify-center space-x-2 shadow-md shadow-emerald-600/20 transition">
+                            <i class="fa-brands fa-whatsapp text-lg"></i>
+                            <span>Consultar / Inscribirme</span>
+                        </a>
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
+        }
+
+        function toggleAdminModal() {
+            const modal = document.getElementById('admin-modal');
+            modal.classList.toggle('hidden');
+        }
+
+        function switchTab(tab) {
+            const photosTabBtn = document.getElementById('tab-photos-btn');
+            const eventsTabBtn = document.getElementById('tab-events-btn');
+            const photosContent = document.getElementById('tab-photos-content');
+            const eventsContent = document.getElementById('tab-events-content');
+
+            if (tab === 'photos') {
+                photosTabBtn.className = "pb-3 px-4 font-semibold text-sm border-b-2 border-brand-500 text-brand-600 transition";
+                eventsTabBtn.className = "pb-3 px-4 font-semibold text-sm border-b-2 border-transparent text-gray-500 hover:text-gray-700 transition";
+                photosContent.classList.remove('hidden');
+                eventsContent.classList.add('hidden');
+            } else {
+                eventsTabBtn.className = "pb-3 px-4 font-semibold text-sm border-b-2 border-brand-500 text-brand-600 transition";
+                photosTabBtn.className = "pb-3 px-4 font-semibold text-sm border-b-2 border-transparent text-gray-500 hover:text-gray-700 transition";
+                eventsContent.classList.remove('hidden');
+                photosContent.classList.add('hidden');
+            }
+        }
+
+        function renderAdminLists() {
+            const photosList = document.getElementById('admin-photos-list');
+            photosList.innerHTML = '';
+            photos.forEach((p, idx) => {
+                const item = document.createElement('div');
+                item.className = "flex items-center justify-between bg-white p-3 rounded-xl border border-gray-200 text-sm";
+                item.innerHTML = `
+                    <div class="flex items-center space-x-3 overflow-hidden">
+                        <img src="${p.url}" class="w-12 h-10 object-cover rounded-lg flex-shrink-0">
+                        <div class="truncate">
+                            <p class="font-semibold text-gray-800 truncate">${p.caption}</p>
+                            <span class="text-xs text-brand-600">${p.badge || 'Padel'}</span>
+                        </div>
+                    </div>
+                    <button onclick="deletePhoto(${idx})" class="text-red-500 hover:text-red-700 p-2"><i class="fa-solid fa-trash"></i></button>
+                `;
+                photosList.appendChild(item);
+            });
+
+            const eventsList = document.getElementById('admin-events-list');
+            eventsList.innerHTML = '';
+            events.forEach((e, idx) => {
+                const item = document.createElement('div');
+                item.className = "flex items-center justify-between bg-white p-3 rounded-xl border border-gray-200 text-sm";
+                item.innerHTML = `
+                    <div class="flex items-center space-x-3 overflow-hidden">
+                        <img src="${e.img}" class="w-12 h-10 object-cover rounded-lg flex-shrink-0">
+                        <div class="truncate">
+                            <p class="font-semibold text-gray-800 truncate">${e.title}</p>
+                            <span class="text-xs text-gray-500">${e.date}</span>
+                        </div>
+                    </div>
+                    <button onclick="deleteEvent(${idx})" class="text-red-500 hover:text-red-700 p-2"><i class="fa-solid fa-trash"></i></button>
+                `;
+                eventsList.appendChild(item);
+            });
+        }
+
+        function addPhoto() {
+            const fileInput = document.getElementById('new-photo-file');
+            const caption = document.getElementById('new-photo-caption').value.trim();
+            const badge = document.getElementById('new-photo-badge').value.trim() || 'Padel';
+
+            if (fileInput.files.length === 0 || !caption) {
+                showToast("Por favor selecciona una imagen de tu ordenador y escribe un título", "error");
+                return;
+            }
+
+            const file = fileInput.files[0];
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                const base64Url = e.target.result;
+                photos.push({ url: base64Url, caption, badge });
+                localStorage.setItem('pato_toranzo_photos', JSON.stringify(photos));
+                
+                fileInput.value = '';
+                document.getElementById('new-photo-caption').value = '';
+                document.getElementById('new-photo-badge').value = '';
+
+                updateCarousel();
+                renderIndicators();
+                renderAdminLists();
+                showToast("Foto subida y agregada con éxito");
+            };
+            reader.readAsDataURL(file);
+        }
+
+        function deletePhoto(idx) {
+            if (photos.length <= 1) {
+                showToast("Debe mantener al menos una foto en la galería", "error");
+                return;
+            }
+            photos.splice(idx, 1);
+            if (currentPhotoIndex >= photos.length) currentPhotoIndex = photos.length - 1;
+            localStorage.setItem('pato_toranzo_photos', JSON.stringify(photos));
+            updateCarousel();
+            renderIndicators();
+            renderAdminLists();
+            showToast("Foto eliminada");
+        }
+
+        function addEvent() {
+            const title = document.getElementById('new-event-title').value.trim();
+            const date = document.getElementById('new-event-date').value.trim();
+            const fileInput = document.getElementById('new-event-file');
+            const desc = document.getElementById('new-event-desc').value.trim();
+
+            if (!title || !date) {
+                showToast("Por favor complete título y fecha del evento", "error");
+                return;
+            }
+
+            if (fileInput.files.length === 0) {
+                showToast("Por favor selecciona una imagen para el evento desde tu ordenador", "error");
+                return;
+            }
+
+            const file = fileInput.files[0];
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                const base64Img = e.target.result;
+                events.push({ title, date, img: base64Img, desc });
+                localStorage.setItem('pato_toranzo_events', JSON.stringify(events));
+
+                document.getElementById('new-event-title').value = '';
+                document.getElementById('new-event-date').value = '';
+                fileInput.value = '';
+                document.getElementById('new-event-desc').value = '';
+
+                renderEvents();
+                renderAdminLists();
+                showToast("Evento publicado exitosamente");
+            };
+            reader.readAsDataURL(file);
+        }
+
+        function deleteEvent(idx) {
+            events.splice(idx, 1);
+            localStorage.setItem('pato_toranzo_events', JSON.stringify(events));
+            renderEvents();
+            renderAdminLists();
+            showToast("Evento eliminado");
+        }
+
+        function showToast(msg, type = 'success') {
+            const toast = document.getElementById('toast');
+            const msgEl = document.getElementById('toast-msg');
+            const iconEl = document.getElementById('toast-icon');
+
+            msgEl.textContent = msg;
+            if (type === 'error') {
+                iconEl.innerHTML = '<i class="fa-solid fa-circle-exclamation text-red-400"></i>';
+            } else {
+                iconEl.innerHTML = '<i class="fa-solid fa-circle-check text-brand-400"></i>';
+            }
+
+            toast.classList.remove('translate-y-20', 'opacity-0');
+            setTimeout(() => {
+                toast.classList.add('translate-y-20', 'opacity-0');
+            }, 3000);
+        }
+    </script>
+</body>
+</html>
